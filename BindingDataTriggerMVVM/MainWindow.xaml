@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BindingDataTriggerMVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="150" Width="606">
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Content="Change Player"/>
+
+        <StatusBar Grid.Row="1" >
+            <StatusBarItem Width="200" BorderBrush="Black" BorderThickness="1">
+                <TextBlock Text="Player X" HorizontalAlignment="Center" TextAlignment="Center" Width="200"/>
+            </StatusBarItem>
+            <StatusBarItem Width="200" BorderBrush="Black" BorderThickness="1">
+                <TextBlock Text="Punkte" HorizontalAlignment="Center" TextAlignment="Center" Width="200"/>
+            </StatusBarItem>
+            <StatusBarItem Width="200" BorderBrush="Black" BorderThickness="1">
+                <TextBlock Text="Player O" HorizontalAlignment="Center" TextAlignment="Center" Width="200"/>
+            </StatusBarItem>
+        </StatusBar>
+        
+        
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Width="200" BorderBrush="Black" BorderThickness="1">
+                <TextBox Width="190" Text="PlayerX" TextAlignment="Center" FontSize="20"/>
+            </StatusBarItem>
+            <StatusBarItem Width="100" BorderBrush="Black" BorderThickness="1">
+                <TextBlock HorizontalAlignment="Center" Width="90" TextAlignment="Center" Text="25"/>
+            </StatusBarItem>
+            <StatusBarItem Width="100" BorderBrush="Black" BorderThickness="1">
+                <TextBlock HorizontalAlignment="Center" Width="90" TextAlignment="Center" Text="25"/>
+            </StatusBarItem>
+            <StatusBarItem Width="200" BorderBrush="Black" BorderThickness="1">
+                <TextBox Width="190" Text="PlayerO" TextAlignment="Center" FontSize="20"/>
+            </StatusBarItem>
+        </StatusBar>
+
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" BorderBrush="Black" BorderThickness="1" Content="Enter Name"/>
+            <Button Grid.Column="1" BorderBrush="Black" BorderThickness="1" Content="Reset"/>
+            <Button Grid.Column="2" BorderBrush="Black" BorderThickness="1" Content="Enter Name"/>
+        </Grid>
     </Grid>
 </Window>
