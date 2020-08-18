@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BindingDataTriggerMVVM" 
+        xmlns:local="clr-namespace:BindingDataTriggerMVVM"
+        xmlns:vm="clr-namespace:BindingDataTriggerMVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="150" Width="600">
-    
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
     <Grid>
 
         <Grid.RowDefinitions>
@@ -56,16 +59,16 @@
                 </ItemsPanelTemplate>
             </StatusBar.ItemsPanel>
             <StatusBarItem Grid.Column="0" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center">
-                <TextBox Text="PlayerX" TextAlignment="Center" FontSize="20"/>
+                <TextBox Text="{Binding PlayerX.Name}" TextAlignment="Center" FontSize="20"/>
             </StatusBarItem>
             <StatusBarItem Grid.Column="1" BorderBrush="Black" BorderThickness="1">
-                <TextBlock HorizontalAlignment="Center" Width="90" TextAlignment="Center" Text="25"/>
+                <TextBlock HorizontalAlignment="Center" Width="90" TextAlignment="Center" Text="{Binding PlayerX.Points}"/>
             </StatusBarItem>
             <StatusBarItem Grid.Column="2" BorderBrush="Black" BorderThickness="1">
-                <TextBlock HorizontalAlignment="Center" Width="90" TextAlignment="Center" Text="25"/>
+                <TextBlock HorizontalAlignment="Center" Width="90" TextAlignment="Center" Text="{Binding PlayerO.Points}"/>
             </StatusBarItem>
             <StatusBarItem Grid.Column="3" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center">
-                <TextBox Text="PlayerO" TextAlignment="Center" FontSize="20"/>
+                <TextBox Text="{Binding PlayerO.Name}" TextAlignment="Center" FontSize="20"/>
             </StatusBarItem>
         </StatusBar>
 
