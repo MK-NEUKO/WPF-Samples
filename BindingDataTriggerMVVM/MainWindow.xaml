@@ -95,9 +95,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Command="{Binding EnterNamePlyerX}" CommandParameter="{Binding ElementName=textBoxPlayerX}" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Content="Enter Name" Click="EnterNamePlayerX"/>
-            <Button Grid.Column="1" BorderBrush="Black" BorderThickness="1" Content="Reset" Click="ResetPoints_Click"/>
-            <Button CommandParameter="{Binding ElementName=textBoxPlayerO}" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Content="Enter Name" Click="EnterNamePlayerO"/>
+            <Button Command="{Binding EnterNamePlayerXCommand}" CommandParameter="{Binding ElementName=textBoxPlayerX}" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Content="Enter Name"/>
+            <Button Command="{Binding ResetPointsCommand}" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Content="Reset"/>
+            <Button Command="{Binding EnterNamePlayerOCommand}" CommandParameter="{Binding ElementName=textBoxPlayerO}" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Content="Enter Name"/>
         </Grid>
     </Grid>
 </Window>

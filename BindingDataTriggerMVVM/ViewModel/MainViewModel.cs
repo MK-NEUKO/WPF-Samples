@@ -1,6 +1,7 @@
 ﻿using BindingDataTriggerMVVM.Command;
 using BindingDataTriggerMVVM.Model;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
@@ -29,6 +30,7 @@ namespace BindingDataTriggerMVVM.ViewModel
         public ICommand ChangePlayerCommand { get; }
         public ICommand EnterNamePlayerXCommand { get; }
         public ICommand EnterNamePlayerOCommand { get; }
+        public ICommand ResetPointsCommand { get; }
 
 
         public MainViewModel()
@@ -38,23 +40,56 @@ namespace BindingDataTriggerMVVM.ViewModel
 
             ChangePlayerCommand = new ActionCommand(OnChangePlayerExecute, OnChangePlayerCanExecute);
             EnterNamePlayerXCommand = new ActionCommand(OnEnterNamePlayerXExecute, OnEnterNamePlayerXCanExecute);
+            EnterNamePlayerOCommand = new ActionCommand(OnEnterNamePlayerOExecute, OnEnterNamePlayerOCanExecute);
+            ResetPointsCommand = new ActionCommand(OnResetPointsExecute, OnResetPointsCanExecute);
+        }
+
+        private bool OnResetPointsCanExecute(object arg)
+        {
+            return true;
+        }
+
+        private void OnResetPointsExecute(object obj)
+        {
+            ResetPoints();
+        }
+
+        private bool OnEnterNamePlayerOCanExecute(object arg)
+        {
+            if (arg is TextBox value)
+                return value.Text != "";
+            else
+                // Exeption zurückgeben
+                return false;
+        }
+
+        private void OnEnterNamePlayerOExecute(object obj)
+        {
+            if (obj is TextBox value)
+                PlayerX.Name = value.Text;
         }
 
         private bool OnEnterNamePlayerXCanExecute(object arg)
         {
-            return true;
+            if (arg is TextBox value)
+                return value.Text != "";
+            else
+                // Exeption zurückgeben
+                return false;
         }
 
         private void OnEnterNamePlayerXExecute(object obj)
         {
-            // Text aus textboxPlayerX beziehen
-            // Text aus TextBox in PlayerX.Name speichern
+            if (obj is TextBox value)
+                PlayerX.Name = value.Text;
         }
 
         private bool OnChangePlayerCanExecute(object arg)
         {
-            // prüfen ob PlayerX.InAction oder PlayerO.InAction true
-            return true;
+            if (PlayerX.InAction || PlayerO.InAction)
+                return true;
+            else
+                return false;
         }
 
         private void OnChangePlayerExecute(object obj)
@@ -76,7 +111,7 @@ namespace BindingDataTriggerMVVM.ViewModel
             }
         }
 
-        public void ResetPoints()
+        private void ResetPoints()
         {
             PlayerX.Points = 0;
             PlayerO.Points = 0;

@@ -25,26 +25,5 @@ namespace BindingDataTriggerMVVM
         {
             InitializeComponent();
         }
-
-        private void ResetPoints_Click(object sender, RoutedEventArgs e)
-        {
-            ((MainViewModel)DataContext).ResetPoints();
-        }
-
-        private void EnterNamePlayerX(object sender, RoutedEventArgs e)
-        {
-            if (textBoxPlayerX.Text is string value)
-            {
-                ((MainViewModel)DataContext).PlayerX.Name = value;
-            }
-        }
-
-        private void EnterNamePlayerO(object sender, RoutedEventArgs e)
-        {
-            if (textBoxPlayerO.Text is string value)
-            {
-                ((MainViewModel)DataContext).PlayerO.Name = value;
-            }
-        }
     }
 }
