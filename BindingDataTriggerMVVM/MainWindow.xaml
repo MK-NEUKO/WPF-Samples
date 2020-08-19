@@ -35,7 +35,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="ChangePlayer" Grid.Row="0" Content="Change Player" Click="ChangePlayer_Click"/>
+        <Button Command="{Binding ChangePlayerCommand}" x:Name="ChangePlayer" Grid.Row="0" Content="Change Player"/>
 
         <StatusBar Grid.Row="1" Background="SlateGray">
             <StatusBar.ItemsPanel>

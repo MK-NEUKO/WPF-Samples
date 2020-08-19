@@ -26,11 +26,6 @@ namespace BindingDataTriggerMVVM
             InitializeComponent();
         }
 
-        private void ChangePlayer_Click(object sender, RoutedEventArgs e)
-        {
-            ((MainViewModel)DataContext).ChangePlayer();
-        }
-
         private void ResetPoints_Click(object sender, RoutedEventArgs e)
         {
             ((MainViewModel)DataContext).ResetPoints();

@@ -1,8 +1,10 @@
-﻿using BindingDataTriggerMVVM.Model;
+﻿using BindingDataTriggerMVVM.Command;
+using BindingDataTriggerMVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace BindingDataTriggerMVVM.ViewModel
 {
@@ -24,14 +26,28 @@ namespace BindingDataTriggerMVVM.ViewModel
             set { playerO = value; }
         }
 
+        public ICommand ChangePlayerCommand { get; }
+
 
         public MainViewModel()
         {
             PlayerX = new PlayerData { InAction = true, Name = "Michael", Points = 12 };
             PlayerO = new PlayerData { InAction = false, Name = "Jens", Points = 14 };
+
+            ChangePlayerCommand = new ActionCommand(OnChangePlayerExecute, OnChangePlayerCanExecute);
         }
 
-        public void ChangePlayer()
+        private bool OnChangePlayerCanExecute(object arg)
+        {
+            return true;
+        }
+
+        private void OnChangePlayerExecute(object obj)
+        {
+            ChangePlayer();
+        }
+
+        private void ChangePlayer()
         {
             if (PlayerX.InAction)
             {
