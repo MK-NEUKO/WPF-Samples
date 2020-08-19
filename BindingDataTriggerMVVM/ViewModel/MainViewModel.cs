@@ -66,7 +66,7 @@ namespace BindingDataTriggerMVVM.ViewModel
         private void OnEnterNamePlayerOExecute(object obj)
         {
             if (obj is TextBox value)
-                PlayerX.Name = value.Text;
+                PlayerO.Name = value.Text;
         }
 
         private bool OnEnterNamePlayerXCanExecute(object arg)
