@@ -53,7 +53,7 @@
                 <TextBlock Style="{StaticResource displayPlayerX}" Text="Player X" HorizontalAlignment="Center" TextAlignment="Center"/>
             </StatusBarItem>
             <StatusBarItem Grid.Column="1" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center">
-                <TextBlock Text="Punkte" HorizontalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text="Punkte" HorizontalAlignment="Center" TextAlignment="Center" Foreground="LawnGreen"/>
             </StatusBarItem>
             <StatusBarItem Grid.Column="2" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center">
                 <TextBlock Style="{StaticResource displayPlayerO}" Text="Player O" HorizontalAlignment="Center" TextAlignment="Center"/>
@@ -95,9 +95,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" BorderBrush="Black" BorderThickness="1" Content="Enter Name" Click="EnterNamePlayerX"/>
+            <Button Command="{Binding EnterNamePlyerX}" CommandParameter="{Binding ElementName=textBoxPlayerX}" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Content="Enter Name" Click="EnterNamePlayerX"/>
             <Button Grid.Column="1" BorderBrush="Black" BorderThickness="1" Content="Reset" Click="ResetPoints_Click"/>
-            <Button Grid.Column="2" BorderBrush="Black" BorderThickness="1" Content="Enter Name" Click="EnterNamePlayerO"/>
+            <Button CommandParameter="{Binding ElementName=textBoxPlayerO}" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Content="Enter Name" Click="EnterNamePlayerO"/>
         </Grid>
     </Grid>
 </Window>

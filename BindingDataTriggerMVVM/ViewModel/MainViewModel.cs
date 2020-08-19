@@ -27,6 +27,8 @@ namespace BindingDataTriggerMVVM.ViewModel
         }
 
         public ICommand ChangePlayerCommand { get; }
+        public ICommand EnterNamePlayerXCommand { get; }
+        public ICommand EnterNamePlayerOCommand { get; }
 
 
         public MainViewModel()
@@ -35,10 +37,23 @@ namespace BindingDataTriggerMVVM.ViewModel
             PlayerO = new PlayerData { InAction = false, Name = "Jens", Points = 14 };
 
             ChangePlayerCommand = new ActionCommand(OnChangePlayerExecute, OnChangePlayerCanExecute);
+            EnterNamePlayerXCommand = new ActionCommand(OnEnterNamePlayerXExecute, OnEnterNamePlayerXCanExecute);
+        }
+
+        private bool OnEnterNamePlayerXCanExecute(object arg)
+        {
+            return true;
+        }
+
+        private void OnEnterNamePlayerXExecute(object obj)
+        {
+            // Text aus textboxPlayerX beziehen
+            // Text aus TextBox in PlayerX.Name speichern
         }
 
         private bool OnChangePlayerCanExecute(object arg)
         {
+            // prüfen ob PlayerX.InAction oder PlayerO.InAction true
             return true;
         }
 
