@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BindingDataTriggerMVVM.ViewModel;
 
 namespace BindingDataTriggerMVVM
 {
@@ -23,6 +24,11 @@ namespace BindingDataTriggerMVVM
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ChangePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainViewModel)DataContext).ChangePlayer();
         }
     }
 }

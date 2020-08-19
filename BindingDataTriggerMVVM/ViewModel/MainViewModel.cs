@@ -29,5 +29,19 @@ namespace BindingDataTriggerMVVM.ViewModel
             PlayerX = new PlayerData { InAction = true, Name = "Michael", Points = 12 };
             PlayerO = new PlayerData { InAction = false, Name = "Jens", Points = 14 };
         }
+
+        public void ChangePlayer()
+        {
+            if (PlayerX.InAction)
+            {
+                PlayerX.InAction = false;
+                PlayerO.InAction = true;
+            }
+            else
+            {
+                PlayerX.InAction = true;
+                PlayerO.InAction = false;
+            }
+        }
     }
 }
