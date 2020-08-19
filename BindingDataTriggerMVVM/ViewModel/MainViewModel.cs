@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace BindingDataTriggerMVVM.ViewModel
 {
@@ -42,6 +43,12 @@ namespace BindingDataTriggerMVVM.ViewModel
                 PlayerX.InAction = true;
                 PlayerO.InAction = false;
             }
+        }
+
+        public void ResetPoints()
+        {
+            PlayerX.Points = 0;
+            PlayerO.Points = 0;
         }
     }
 }
