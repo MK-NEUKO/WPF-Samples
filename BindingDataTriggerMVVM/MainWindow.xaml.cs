@@ -38,17 +38,17 @@ namespace BindingDataTriggerMVVM
 
         private void EnterNamePlayerX(object sender, RoutedEventArgs e)
         {
-            if (textBoxPlayerX.Text != null)
+            if (textBoxPlayerX.Text is string value)
             {
-                ((MainViewModel)DataContext).PlayerX.Name = textBoxPlayerX.Text;
+                ((MainViewModel)DataContext).PlayerX.Name = value;
             }
         }
 
         private void EnterNamePlayerO(object sender, RoutedEventArgs e)
         {
-            if (textBoxPlayerO.Text != null)
+            if (textBoxPlayerO.Text is string value)
             {
-                ((MainViewModel)DataContext).PlayerO.Name = textBoxPlayerO.Text;
+                ((MainViewModel)DataContext).PlayerO.Name = value;
             }
         }
     }
